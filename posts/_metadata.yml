@@ -4,8 +4,10 @@
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
+# lightbox: true
+
 # Enable banner style title blocks
-title-block-banner: true
+title-block-banner: false
 
 author: 'Ajay Mehta'
 
@@ -14,7 +16,20 @@ toc-depth: 2
 
 page-layout: article
 
-# https://giscus.app/comments:
-comments:
-  giscus:
-    repo: AjayKMehta/quarto_blog
+knitr:
+    opts_chunk:
+      class.error: "bg-danger text-danger"
+      dev: "ragg_png"
+      dpi: 300
+      fig.align: "center"
+      fig.retina: 3
+      fig.width: 6
+      out.width: "75%"
+      collapse: true
+      results: markup
+      cache: true
+
+# https://giscus.app:
+# comments:
+#   giscus:
+#     repo: AjayKMehta/quarto-blog
