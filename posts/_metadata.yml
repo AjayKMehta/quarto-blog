@@ -1,5 +1,9 @@
 # options specified here will apply to all posts in this folder
 
+website:
+  page-navigation: true
+  back-to-top-navigation: true
+
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
@@ -9,7 +13,7 @@ freeze: true
 # Enable banner style title blocks
 title-block-banner: false
 
-author: 'Ajay Mehta'
+author: "Ajay Mehta"
 
 toc: true
 toc-depth: 2
@@ -17,18 +21,17 @@ toc-depth: 2
 page-layout: article
 
 knitr:
-    opts_chunk:
-      class.error: "bg-danger text-danger"
-      dev: "ragg_png"
-      dpi: 300
-      fig.align: "center"
-      fig.retina: 3
-      fig.width: 6
-      out.width: "75%"
-      collapse: true
-      results: markup
-      cache: true
-
+  opts_chunk:
+    class.error: "bg-danger text-danger"
+    dev: "ragg_png"
+    dpi: 300
+    fig.align: "center"
+    fig.retina: 3
+    fig.width: 6
+    out.width: "75%"
+    collapse: true
+    results: markup
+    cache: true
 # https://giscus.app:
 # comments:
 #   giscus:
