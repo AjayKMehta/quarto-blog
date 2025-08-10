@@ -1,0 +1,13 @@
+---
+title: "About"
+image: dolphins.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+
+---
+
+This is the personal blog of Ajay Mehta. For most of my career, I have worked as a technologist in the financial services industry. In this blog, I will explore a variety of topics related to programming, math and anything else that interests me. Opinions expressed are **solely** my own and **not** that of my employer.
