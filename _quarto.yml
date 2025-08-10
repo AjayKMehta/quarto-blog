@@ -1,0 +1,74 @@
+filters:
+  - bsicons
+  - callouty-theorem
+  - collapse-callout
+  - fontawesome
+  # https://dixslyf.github.io/quarto-group-html-cell-outputs/configuration.html
+  # if you want to exclude a cell's outputs from the filter, you need to specify group-outputs: false in its options
+  - group-html-cell-outputs
+  - include-code-files
+  # Enable in Quarto doc if needed.
+  # - imagify
+  # - language-name
+
+project:
+  type: website
+  # https://quarto.org/docs/reference/projects/options.html#preview
+  preview:
+    browser: true
+
+website:
+  title: "Ajay's blog"
+  description: "This is Ajay Mehta's personal blog."
+  site-url: "https://ajaymehta.netlify.com/"
+  navbar:
+    right:
+      - text: About
+        href: about.qmd
+      - icon: github
+        href: https://github.com/AjayKMehta
+      - text: More
+        menu:
+        - text: Git tips
+          href: git-tips.qmd
+  # TODO: Update
+  page-footer:
+    left: "© 2025, Ajay Mehta. Built with [Quarto](https://quarto.org/)."
+    background: "#6fc0e2"
+    right:
+    - text: "License"
+      href: LICENSE.md
+  cookie-consent: true
+
+format:
+  html:
+    from: markdown+emoji
+    anchor-sections: true
+    mainfont: 'FiraCode Nerd Font Mono'
+    font-family:
+      - Source Sans Pro
+      - 'FiraCode Nerd Font Mono'
+      - Consolas
+      - 'Courier New'
+      - Roboto Regular
+    code-annotations: hover
+    code-tools: true
+    code-fold: show
+    code-overflow: scroll
+    code-copy: true
+    code-link: true
+    highlight-style: ayu
+    fig-responsive: true
+    footnotes-hover: true
+    code-block-border-left: "#4f6952"
+    html-math-method: mathjax
+    number-sections: false
+    df-print: paged
+    smooth-scroll: true
+    respect-user-color-scheme: true
+    theme:
+      light: lumen
+      dark: darkly
+    css: styles.css
+
+editor: source
