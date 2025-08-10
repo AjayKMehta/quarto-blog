@@ -8,7 +8,6 @@ filters:
   - group-html-cell-outputs
   - include-code-files
   # Enable in Quarto doc if needed.
-  # - imagify
   # - language-name
 
 project:
