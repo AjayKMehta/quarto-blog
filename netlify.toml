@@ -1,0 +1,57 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+[build]
+  publish = "_site"
+  command = "quarto render"
+
+# If skip_processing = true, all other settings are ignored
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = false
+
+[build.processing.js]
+  bundle = true
+  minify = false
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Production context: all deploys from the Production branch (master) will
+# inherit these settings.
+[context.production.environment]
+
+# All deploys from dev branch will inherit these settings.
+[context.dev]
+
+# Branch Deploy context: all deploys that are not from a pull/merge request or
+# from the Production branch will inherit these settings.
+[context.branch-deploy]
+
+# Deploy Preview context: all deploys generated from a pull/merge request will
+# inherit these settings.
+[context.deploy-preview]
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+package = "@quarto/netlify-plugin-quarto"
+
+  [plugins.inputs]
+  cmd = "render --to html"
+
+# https://drmowinckels.io/blog/2020-05-25-changing-you-blogdown-workflow/
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+	# https://github.com/coatless/quarto-webr
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
