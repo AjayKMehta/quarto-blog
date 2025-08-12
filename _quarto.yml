@@ -20,7 +20,7 @@ project:
 website:
   title: "Ajay's blog"
   description: "This is Ajay Mehta's personal blog."
-  site-url: "https://ajaymehta.netlify.com/"
+  site-url: "https://ajaymehta.netlify.app/"
   navbar:
     right:
       - text: About
