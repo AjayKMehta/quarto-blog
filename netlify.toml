@@ -41,11 +41,11 @@
   to = "/index.html"
   status = 200
 
-[[plugins]]
-package = "@quarto/netlify-plugin-quarto"
+# [[plugins]]
+# package = "@quarto/netlify-plugin-quarto"
 
-  [plugins.inputs]
-  cmd = "render --to html"
+#   [plugins.inputs]
+#   cmd = "render --to html"
 
 # https://drmowinckels.io/blog/2020-05-25-changing-you-blogdown-workflow/
 [[headers]]
