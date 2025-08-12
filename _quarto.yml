@@ -15,6 +15,7 @@ project:
   # https://quarto.org/docs/reference/projects/options.html#preview
   preview:
     browser: true
+    port: 4200
 
 website:
   title: "Ajay's blog"
@@ -33,10 +34,10 @@ website:
   # TODO: Update
   page-footer:
     left: "© 2025, Ajay Mehta. Built with [Quarto](https://quarto.org/)."
-    background: "#6fc0e2"
     right:
     - text: "License"
       href: LICENSE.md
+    background: "#6fc0e2"
   cookie-consent: true
 
 format:
