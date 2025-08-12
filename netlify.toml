@@ -41,13 +41,6 @@
   status = 200
 
 [[plugins]]
-package = "@quarto/netlify-plugin-quarto"
-
-  [plugins.inputs]
-  cmd = "render --to html"
-
-
-[[plugins]]
 package = "netlify-plugin-checklinks"
 
   [plugins.inputs]
