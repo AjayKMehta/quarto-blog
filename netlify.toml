@@ -22,7 +22,7 @@
 
 # Production context: all deploys from the Production branch (master) will
 # inherit these settings.
-[context.production.environment]
+[context.production]
 
 # All deploys from dev branch will inherit these settings.
 [context.dev]
@@ -30,9 +30,10 @@
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
 [context.branch-deploy]
+environment = { NETLIFY_BUILD_DEBUG = "true" }
 
-# Deploy Preview context: all deploys generated from a pull/merge request will
-# inherit these settings.
+# Deploy Preview context: all deploys generated from a pull request will inherit
+# these settings.
 [context.deploy-preview]
 
 [[redirects]]
