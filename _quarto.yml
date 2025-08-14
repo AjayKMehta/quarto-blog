@@ -27,15 +27,18 @@ website:
   repo-actions: [source, issue]
   navbar:
     search: true
-    right:
+    left:
       - text: About
         href: about.qmd
-      - icon: github
-        href: https://github.com/AjayKMehta
       - text: More
         menu:
         - text: Git tips
           href: git-tips.qmd
+    right:
+      - icon: github
+        href: https://github.com/AjayKMehta
+      - icon: rss
+        href: index.xml
   # TODO: Update
   page-footer:
     left: "© 2025, Ajay Mehta. Built with [Quarto](https://quarto.org/)."
