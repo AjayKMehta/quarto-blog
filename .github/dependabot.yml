@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 5
+    groups:
+      actions-dependencies:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "⬆️ Dependencies"
+    target-branch: "dev"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 5
+    labels:
+      - "⬆️ Dependencies"
+    target-branch: "dev"
