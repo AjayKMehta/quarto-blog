@@ -3,8 +3,9 @@
 website:
   page-navigation: true
   back-to-top-navigation: true
+  draft-mode: unlinked
 
-# freeze computational output
+# freeze computational output - need this for CI to work.
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
