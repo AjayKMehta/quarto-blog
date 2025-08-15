@@ -25,8 +25,10 @@ website:
   reader-mode: true
   repo-url: https://github.com/AjayKMehta/quarto-blog
   repo-actions: [source, issue]
+  search:
+    keyboard-shortcut: ["s", "/"]
+    show-item-context: tree
   navbar:
-    search: true
     left:
       - text: About
         href: about.qmd
@@ -46,7 +48,9 @@ website:
     - text: "License"
       href: LICENSE.md
     background: "#6fc0e2"
-  cookie-consent: true
+  cookie-consent:
+    type: express
+  open-graph: true
 
 format:
   html:
