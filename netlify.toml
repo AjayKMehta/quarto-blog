@@ -3,23 +3,23 @@
   publish = "_site"
   cmd = "quarto render"
 
-# If skip_processing = true, all other settings are ignored
-[build.processing]
-  skip_processing = false
+  # If skip_processing = true, all other settings are ignored
+  [build.processing]
+    skip_processing = false
 
-[build.processing.css]
-  bundle = true
-  minify = false
+    [build.processing.css]
+      bundle = true
+      minify = false
 
-[build.processing.js]
-  bundle = true
-  minify = false
+    [build.processing.js]
+      bundle = true
+      minify = false
 
-[build.processing.html]
-  pretty_urls = true
+    [build.processing.html]
+      pretty_urls = true
 
-[build.processing.images]
-  compress = true
+    [build.processing.images]
+      compress = true
 
 # Production context: all deploys from the Production branch (master) will
 # inherit these settings.
@@ -31,7 +31,7 @@
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
 [context.branch-deploy]
-environment = { NETLIFY_BUILD_DEBUG = "true" }
+  environment = { NETLIFY_BUILD_DEBUG = "true" }
 
 # Deploy Preview context: all deploys generated from a pull request will inherit
 # these settings.
@@ -43,37 +43,37 @@ environment = { NETLIFY_BUILD_DEBUG = "true" }
   status = 200
 
 [[plugins]]
-package = "netlify-plugin-checklinks"
+  package = "netlify-plugin-checklinks"
 
   [plugins.inputs]
-  # An array of glob patterns for pages on your site
-  # Recursive traversal will start from these
+    # An array of glob patterns for pages on your site
+    # Recursive traversal will start from these
     entryPoints = ["*.html", "*.md"]
 
-  # Recurse through all the links and asset references on your page, starting
-  # at the entrypoints
-  recursive = true
+    # Recurse through all the links and asset references on your page, starting
+    # at the entrypoints
+    recursive = true
 
-  # Checklinks outputs TAP (https://testanything.org/tap-version-13-specification.html)
-  # by default. Enabling pretty mode makes the output easier on the eyes.
-  pretty = true
+    # Checklinks outputs TAP (https://testanything.org/tap-version-13-specification.html)
+    # by default. Enabling pretty mode makes the output easier on the eyes.
+    pretty = true
 
-  # You can mark some check as skipped, which will block checklinks
-  # from ever attempting to execute them.
-  # skipPatterns is an array of strings you can match against failing reports
-  skipPatterns = []
+    # You can mark some check as skipped, which will block checklinks
+    # from ever attempting to execute them.
+    # skipPatterns is an array of strings you can match against failing reports
+    skipPatterns = []
 
-  # You can mark some check as todo, which will execute the check, but allow failures.
-  todoPatterns = []
+    # You can mark some check as todo, which will execute the check, but allow failures.
+    todoPatterns = []
 
-  # Report on all broken links to external pages.
-  # Enabling this will make your tests more brittle, since you can't control
-  # external pages.
-  checkExternal = false
+    # Report on all broken links to external pages.
+    # Enabling this will make your tests more brittle, since you can't control
+    # external pages.
+    checkExternal = false
 
-  # Enable to check references to source maps, source map sources etc.
-  # Many build tools don't emit working references, so this is disabled by default
-  followSourceMaps = false
+    # Enable to check references to source maps, source map sources etc.
+    # Many build tools don't emit working references, so this is disabled by default
+    followSourceMaps = false
 
 # https://drmowinckels.io/blog/2020-05-25-changing-you-blogdown-workflow/
 [[headers]]
@@ -81,6 +81,6 @@ package = "netlify-plugin-checklinks"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     X-Robots-Tag = "noindex"
-	# https://github.com/coatless/quarto-webr
+    # https://github.com/coatless/quarto-webr
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Embedder-Policy = "require-corp"
