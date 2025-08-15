@@ -9,7 +9,7 @@ listing:
   sort-ui: true
   filter-ui: true
   fields: [date, title, reading-time, description, categories]
-  feed: true
+  feed: true # Create RSS feed
 page-layout: full
 title-block-banner: false
 ---
