@@ -1,13 +1,16 @@
 ---
 title: "About"
 image: dolphins.jpg
+code-tools: false
 about:
   template: jolla
+  image-alt: Dolphins off the coast of Newport Beach, CA
+  image-shape: round
   links:
     - icon: github
-      text: Github
-      href: https://github.com
-
+      href: https://github.com/AjayKMehta
+    - icon: linkedin
+      href: https://www.linkedin.com/in/ajay-mehta-b781ba1/
 ---
 
 This is the personal blog of Ajay Mehta. For most of my career, I have worked as a technologist in the financial services industry. In this blog, I will explore a variety of topics related to programming, math and anything else that interests me. Opinions expressed are **solely** my own and **not** that of my employer.
