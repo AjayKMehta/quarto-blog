@@ -12,6 +12,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Check out repository
+        id: checkout
         uses: actions/checkout@v4
 
       - name: Set up Quarto
@@ -21,6 +22,13 @@ jobs:
       - name: Render
         id: render
         uses: quarto-dev/quarto-actions/render@v2
+
+      # https://dev.to/hectorleiva/github-actions-and-creating-a-short-sha-hash-8b7
+      - name: Set short git commit SHA
+        id: short-sha
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
       - name: Deploy to Netlify
         id: deploy
@@ -35,7 +43,7 @@ jobs:
           overwrites-pull-request-comment: true
           alias: $ {{ env:DEPLOY_SOURCE }}
         env:
-          DEPLOY_SOURCE: ${{ github.head_ref || github.sha }}
+          DEPLOY_SOURCE: ${{ github.head_ref ||  env.COMMIT_SHORT_SHA  }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 2
