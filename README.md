@@ -1,7 +1,5 @@
 # Blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/db14934e-1391-47d3-af07-18259a5ee7ed/deploy-status)](https://app.netlify.com/projects/ajaymehta/deploys)
-
 This repository contains the source files for my [blog](https://ajaymehta.netlify.com/) built with [quarto](https://quarto.org/).
 
 ## Files
@@ -23,15 +21,15 @@ Here are some of the important files in this repository:
 - [Netlify CLI](https://docs.netlify.com/cli/get-started/)
 - [Quarto CLI](https://quarto.org)
 
-## Netlify CLI
+### Netlify CLI
 
 For debugging output: `$env:DEBUG='*'`.
 
-### Login
+#### Login
 
 Login: `netlify login`. The access token will be stored in `~\AppData\Roaming\netlify\Config\config.json`
 
-### Link to Netlify site
+#### Link to Netlify site
 
 Run the following CLI command to link your local repository to your Netlify site:
 
@@ -39,7 +37,9 @@ Run the following CLI command to link your local repository to your Netlify site
 neltlify link
 ```
 
-### Build
+For a brand-new site, use `netlify init`.
+
+#### Build
 
 ```shell
 netlify build
@@ -47,12 +47,11 @@ netlify build
 
 > :bulb: For local builds, the Netlify CLI will read the `.env` files you have stored in your local environment.
 
-### Deploy
+#### Deploy
 
 Deploy:
 
 ```shell
-quarto render
 netlify deploy
 ```
 
@@ -64,13 +63,21 @@ netlify deploy --alias=draft
 
 To deploy to production, add `--prod` (`-p`) flag.
 
-### Run locally
+#### Run locally
 
 ```shell
 netlify dev
 ```
 
-## Publish using quarto
+### Quarto
+
+#### Render
+
+```shell
+quarto render
+```
+
+#### Publish
 
 ```shell
 quarto publish netlify
