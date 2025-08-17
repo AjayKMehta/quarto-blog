@@ -30,10 +30,10 @@ jobs:
           production-branch: main
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy Docs from GitHub Actions - ${{ env.DEPLOY_SOURCE }}"
+          deploy-message: "Deploy from GitHub Actions - ${{ env.DEPLOY_SOURCE }}"
           enable-pull-request-comment: true
           overwrites-pull-request-comment: true
-          alias: $env:DEPLOY_SOURCE
+          alias: $ {{ env:DEPLOY_SOURCE }}
         env:
           DEPLOY_SOURCE: ${{ github.head_ref || github.sha }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
