@@ -10,6 +10,7 @@ listing:
   filter-ui: true
   fields: [date, title, reading-time, description, categories]
   feed: true # Create RSS feed
+  date-format: medium
 page-layout: full
 title-block-banner: false
 ---
