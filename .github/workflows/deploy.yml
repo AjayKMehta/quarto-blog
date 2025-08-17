@@ -41,7 +41,7 @@ jobs:
           deploy-message: "Deploy from GitHub Actions - ${{ env.DEPLOY_SOURCE }}"
           enable-pull-request-comment: true
           overwrites-pull-request-comment: true
-          alias: $ {{ env:DEPLOY_SOURCE }}
+          alias: $ {{ env.DEPLOY_SOURCE }}
         env:
           DEPLOY_SOURCE: ${{ github.head_ref ||  env.COMMIT_SHORT_SHA  }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
