@@ -6,10 +6,15 @@ listing:
   sort: "date desc"
   type: default
   categories: true
-  sort-ui: true
+  sort-ui: [title, date]
   filter-ui: true
   fields: [date, title, reading-time, description, categories]
-  feed: true # Create RSS feed
+  feed: # Create RSS feed
+    type: metadata
+    language: en-us
+  exclude:
+    contents: posts/git-tips/**/*.qmd
+  date-format: medium
 page-layout: full
 title-block-banner: false
 ---

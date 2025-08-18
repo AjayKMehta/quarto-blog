@@ -1,3 +1,4 @@
 {
+    "git.branchProtectionPrompt": "alwaysCommit",
     "licenser.license": "CC-BY-NC-4"
 }

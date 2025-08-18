@@ -1,0 +1,49 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'pull_request' && github.event.pull_request.merged == 'false') || github.event_name != 'pull_request'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out repository
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        id: quarto-setup
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render
+        id: render
+        uses: quarto-dev/quarto-actions/render@v2
+
+      # https://dev.to/hectorleiva/github-actions-and-creating-a-short-sha-hash-8b7
+      - name: Set short git commit SHA
+        id: short-sha
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
+
+      - name: Deploy to Netlify
+        id: deploy
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './_site'
+          production-branch: main
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions - ${{ env.DEPLOY_SOURCE }}"
+          enable-pull-request-comment: true
+          overwrites-pull-request-comment: true
+          alias: ${{ env.DEPLOY_SOURCE }}
+        env:
+          DEPLOY_SOURCE: ${{ github.head_ref ||  env.COMMIT_SHORT_SHA  }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 2
