@@ -2,11 +2,11 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-
+    branches-ignore: [main]
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    if: (github.event_name == 'pull_request' && github.event.pull_request.merged == 'false') || github.event_name != 'pull_request'
+    if: (github.event_name == 'pull_request' && github.event.pull_request.merged == false) || github.event_name != 'pull_request'
     permissions:
       contents: write
       pull-requests: write
