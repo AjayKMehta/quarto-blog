@@ -33,7 +33,8 @@ knitr:
     collapse: true
     results: markup
     cache: true
+
 # https://giscus.app:
-# comments:
-#   giscus:
-#     repo: AjayKMehta/quarto-blog
+comments:
+  giscus:
+    repo: AjayKMehta/quarto-blog
