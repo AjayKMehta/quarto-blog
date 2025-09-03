@@ -9,6 +9,8 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     if: github.actor != 'dependabot[bot]' && github.event.pull_request.merged == true
+    permissions:
+      contents: read
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
