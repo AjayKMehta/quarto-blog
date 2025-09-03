@@ -82,3 +82,9 @@ quarto render
 ```shell
 quarto publish netlify
 ```
+
+## CICD
+
+1. [deploy.yml](.github/workflows/deploy.yml): This runs for pushes to all branches except `main` which is the production branch. Depending if a PR is active, it will create a [deploy preview](https://docs.netlify.com/deploy/deploy-types/deploy-previews/) or [branch deploy](https://docs.netlify.com/deploy/deploy-types/branch-deploys/).
+
+2. [publish.yml](.github/workflows/publish.yml): This runs after a PR to `main` has been closed and publishes the site.
