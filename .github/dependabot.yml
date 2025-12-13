@@ -10,8 +10,8 @@ updates:
     groups:
       actions-dependencies:
         update-types:
-          - "minor"
-          - "patch"
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
     labels:
       - "⬆️ Dependencies"
     target-branch: "dev"
