@@ -35,3 +35,5 @@ _site/
 # Local Netlify folder
 .netlify
 node_modules/
+
+**/*.quarto_ipynb
