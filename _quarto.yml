@@ -69,7 +69,9 @@ format:
     code-overflow: scroll
     code-copy: true
     code-link: true
-    highlight-style: ayu
+    highlight-style:
+       dark: dracula
+       light: github
     fig-responsive: true
     footnotes-hover: true
     code-block-border-left: "#4f6952"
@@ -79,8 +81,8 @@ format:
     smooth-scroll: true
     respect-user-color-scheme: true
     theme:
-      light: lumen
       dark: darkly
+      light: lumen
     css: styles.css
 
 editor: source
