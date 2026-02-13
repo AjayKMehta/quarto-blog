@@ -15,15 +15,15 @@ jobs:
     steps:
       - name: Check out repository
         id: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Set up Quarto
         id: quarto-setup
-        uses: quarto-dev/quarto-actions/setup@v2
+        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2
 
       - name: Set up R (for code-link option)
         id: r-setup
-        uses: r-lib/actions/setup-r@v2
+        uses: r-lib/actions/setup-r@6f6e5bc62fba3a704f74e7ad7ef7676c5c6a2590 # v2
 
       - name: Install packages
         id: install-pkgs
@@ -31,7 +31,7 @@ jobs:
 
       - name: Render
         id: render
-        uses: quarto-dev/quarto-actions/render@v2
+        uses: quarto-dev/quarto-actions/render@8a96df13519ee81fd526f2dfca5962811136661b # v2
 
       # https://dev.to/hectorleiva/github-actions-and-creating-a-short-sha-hash-8b7
       - name: Set short git commit SHA
@@ -42,7 +42,7 @@ jobs:
 
       - name: Deploy to Netlify
         id: deploy
-        uses: nwtgck/actions-netlify@v3.0
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
         with:
           publish-dir: './_site'
           production-branch: main
